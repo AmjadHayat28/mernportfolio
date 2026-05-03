@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6.7%;
+    --foreground: 0 0% 91.8%;
+
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 91.8%;
+
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 0% 91.8%;
+
+    --primary: 168 100% 48%;
+    --primary-foreground: 0 0% 6.7%;
+
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 91.8%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 39.6%;
+
+    --accent: 168 100% 48%;
+    --accent-foreground: 0 0% 6.7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 168 100% 48%;
+
+    --radius: 0.5rem;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 6.7%;
+    --sidebar-foreground: 0 0% 91.8%;
+    --sidebar-primary: 168 100% 48%;
+    --sidebar-primary-foreground: 0 0% 6.7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 91.8%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 168 100% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
+
+/* Pulse animation for MERN visualizer */
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-line {
+  animation: pulse-line 2s ease-in-out infinite;
+}
+
+.animate-pulse-line-delay {
+  animation: pulse-line 2s ease-in-out 0.5s infinite;
+}
+
+.animate-pulse-line-delay-2 {
+  animation: pulse-line 2s ease-in-out 1s infinite;
+}
